@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1> Create an account </h1>
+  {{get_flashed_messages()[0]}}
+  <form method='post'>
+    {{exists_error}}
+    <br>
+    <label> Username: <input name='username' value={{saved_username}}> </label> <div class='error'> {{username_error}} </div>
+    <br>
+    <label> Password: <input type=password name='password'> </label> <div class='error'> {{password_error}} </div>
+    <br>
+    <label> Verify Password: <input type=password name='verified'> </label> <div class='error'> {{verified_error}} </div>
+    <br>
+    <label><input type='submit' value='Create Account'></label>
+  </form>
+{% endblock %}

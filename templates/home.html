@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block header %}
+<div style='font-size: smaller; color: blue'>{{get_flashed_messages()[0]}}</div>
+Here are the pages this wiki contains:
+<ul>
+{% for page in pages %}
+  <li> <a href='/'+page.title> page.title </a> <li>
+{% endfor %}
+</ul>
+</ul>
+{% endblock %}

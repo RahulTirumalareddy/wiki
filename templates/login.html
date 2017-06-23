@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1> Login </h1>
+  <form method='post' autocomplete="off">
+    <label> Username: <input name='username' autofocus="True" required/> {{error}} </label>
+    <br>
+    <label> Password: <input type='password' name='password' required/> </label>
+    <br>
+    <label><input type='submit' value='Login'/></label>
+  </form>
+  <br>
+  <a href='/signup' style="font-size:smaller"> Don't have an account? Sign up here </a>
+{% endblock %}
