@@ -2,7 +2,7 @@
 {% block header %}
 <h1> Login </h1>
   <form method='post' autocomplete="off">
-    <label> Username: <input name='username' autofocus="True" required/> {{error}} </label>
+    <label> Username: <input name='username' autofocus="True" required/> </label> <div class='error'> {{error}} </div>
     <br>
     <label> Password: <input type='password' name='password' required/> </label>
     <br>
