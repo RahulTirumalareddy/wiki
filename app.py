@@ -72,7 +72,7 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             flash("You have successfully created an account!")
-            return render_template('signup.html', title='Signup')
+            return render_template('signup.html', title='Signup', user=get_user(request.cookies.get('username_cookie')))
         else:
             d={}
             d['title']='Signup'
@@ -87,7 +87,7 @@ def signup():
                 d['verified_error'] = "Your passwords don't match!"
             return render_template('signup.html', **d)
     else:
-        return render_template('signup.html', title='Signup')
+        return render_template('signup.html', title='Signup', user=get_user(request.cookies.get('username_cookie')))
 
 @app.route('/logout')
 def signout():
