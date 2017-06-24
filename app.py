@@ -87,7 +87,7 @@ def signup():
                 d['verified_error'] = "Your passwords don't match!"
             return render_template('signup.html', **d)
     else:
-        return render_template('signup.html', title='Signup'))
+        return render_template('signup.html', title='Signup')
 
 @app.route('/logout')
 def signout():
