@@ -9,3 +9,8 @@ def valid_field(text, field_type):
         if field_type=='password':
             return re.compile("^.{3,20}$").match(text)
     return False
+
+def get_user(user):
+    if user:
+        user=user.split(',')[0]
+    return user

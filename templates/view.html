@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block header %}
+  {{get_flashed_messages()[0]}}
+  <div class='header'>{{title}}</div>
+  {{content|safe}}
+  <hr>
+  <footer>
+    <a href='/wiki/{{title}}/history' style='float: left; padding: 0px 5px 5px 5px'> <b>History</b> </a>
+    <a href='/wiki/{{title}}/edit' style='float: right; padding: 0px 5px 5px 5px'> <b>Edit</b> </a>
+  </footer>
+{% endblock %}

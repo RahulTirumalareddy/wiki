@@ -1,11 +1,10 @@
 {% extends 'base.html' %}
 {% block header %}
 <div style='font-size: smaller; color: blue'>{{get_flashed_messages()[0]}}</div>
-Here are the pages this wiki contains:
-<ul>
-{% for page in pages %}
-  <li> <a href='/'+page.title> page.title </a> <li>
-{% endfor %}
-</ul>
-</ul>
+<div class='header'>What is this website?</div>
+<p>
+Rahul's Wiki is a website made to demonstrate my newly learned web development skills. Some features of the website include using SQL databases, managing logins, using cookies, hashing passwords, Jinja2 templating, using Flask, and an Object Relational Mapper (SQLAlchemy).
+To use this site, navigate to /wiki/*page_title* and if *page_title* exists, you will be taken to the wiki entry for that page. If it doesn't exist, you will be redirected to the editor for that page, in which you can make changes to the content of that page. You can markup your edits with HTML. To edit the content of an existing page, you can append /edit to its URL. Note that you must be logged in to make edits.
+To view the list of all wiki entries, go to /wiki.
+</p>
 {% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block header %}
+<h1>{{page_title}}</h1>
+{{get_flashed_messages()[0]}}
+<form method='post'>
+  <textarea name='content' required>{{saved_content}}</textarea>
+  <input type='submit' value='Update Post'>
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block header %}
+Here are the pages this wiki contains:
+<ul>
+{% for page in pages %}
+  <li> <a href='/wiki/{{page.title}}'> {{page.title}} </a> </li>
+{% endfor %}
+</ul>
+{% endblock %}

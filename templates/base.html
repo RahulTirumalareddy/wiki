@@ -2,7 +2,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Patua+One" rel="stylesheet">
-    <link href="../static/styles.css" rel="stylesheet">
+    <link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet">
     <title> {{title}} </title>
   </head>
   <body>
@@ -11,9 +11,9 @@
     </div>
     <nav>
       {% if user==None %}
-        <pre><a href='/'>Home</a> | <a href='/edit'>Edit</a> | <a href='/signup'>Signup</a>      <a href='/login' style='color:blue'>Login</a></pre>
+        <pre><a href='/'>Home</a> | <a href='/wiki'>Wiki</a> | <a href='/signup'>Signup</a>      <a href='/login' style='color:blue'>Login</a></pre>
       {% else %}
-        <pre><a href='/'>Home</a> | <a href='/edit'>Edit</a> | <a href='/signup'>Signup</a>      <a href='/logout' style='color:blue'>{{user}} (logout)</a></pre>
+        <pre><a href='/'>Home</a> | <a href='/wiki'>Wiki</a> | <a href='/signup'>Signup</a>      <a href='/logout' style='color:blue'>{{user}} (logout)</a></pre>
       {% endif %}
     </nav>
     {% block header %}

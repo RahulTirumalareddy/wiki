@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block header %}
+<div class='header' style='text-align: center;'> Version history for {{name}} </div>
+<ul>
+{% for version in versions %}
+Editor: {{users[loop.index0]}}
+<li>{{version}}</li>
+{% endfor %}
+</ul>
+{% endblock %}
