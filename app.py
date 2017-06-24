@@ -4,7 +4,8 @@ from utils import valid_field, get_user
 import os, bcrypt
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:hello@localhost/wiki"
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://postgres:hello@localhost/wiki"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
 db=SQLAlchemy(app)
 app.secret_key="2314lmnlfm0q394flwa"
 split="25/xz>"
