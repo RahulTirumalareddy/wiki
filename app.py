@@ -102,7 +102,10 @@ def edit(page_title):
     page=db.session.query(Page).filter_by(title=page_title).first()
     if not user:
         flash('You must be signed in to make edits.')
-        return render_template('view.html', title=page_title, content=page.content, user=user)
+        if page:
+            return render_template('view.html', title=page_title, content=page.content, user=user)
+        else:
+            return render_template('view.html', title=page_title, user=user)
 
     stored_user = db.session.query(User).filter_by(username=user).first()
     if stored_user:
