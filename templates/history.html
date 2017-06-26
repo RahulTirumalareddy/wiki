@@ -5,6 +5,9 @@
 {% for version in versions %}
 Editor: {{users[loop.index0]}}
 <li>{{version}}</li>
+{% if loop.index0 < len(versions) - 1 %}
+<hr>
+{% endif %}
 {% endfor %}
 </ul>
 {% endblock %}
