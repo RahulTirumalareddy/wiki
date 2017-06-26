@@ -144,7 +144,7 @@ def history(page_title):
     else:
         versions=page.content.split(split)
         users=page.users.split(split)
-        return render_template('history.html',title=page_title+' History', user=user, users=users, versions=versions, name=page_title)
+        return render_template('history.html',title=page_title+' History', user=user, users=users, versions=versions, name=page_title, versionLen=len(versions))
 
 @app.route('/wiki/<page_title>')
 def view(page_title):
